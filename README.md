@@ -1,48 +1,99 @@
-# concurrency
-Concurreny Primer
+🧵 Multithreading & Concurrency Roadmap
 
-Producer - Consumer
+🔹 1. Thread Fundamentals
+Topics:
 
-Bounded Blocking Queue
+Thread creation (std::thread / std::async)
 
-Job Scheduler (Jobs should be scheduled after some delay)
+Joining vs Detaching
 
-ConcurrentMap / ConcurrentQueue / ConcurrentStack
+Race conditions and undefined behavior
 
-Reader-Writer
+
+
+🔸 2. Thread-Safe Data Structures
+Topics:
+
+ConcurrentQueue, ConcurrentStack, ConcurrentMap
+
+Lock-based vs lock-free structures
+
+
+🔸 3. Thread Coordination Patterns
+Producer-Consumer
+Blocking Queue (bounded/unbounded)
+
+Multiple producers, multiple consumers
+
+Reader-Writer Lock
+Shared lock for readers, exclusive lock for writers
 
 ThreadPool
+Fixed vs dynamic pool
 
-Reader-Writer (Multiple Readers and Single Writer) — Concept of Shared Lock and Exclusive Lock
+Task scheduling
 
-Singleton
+Job Scheduler
+Delayed execution (e.g., "schedule job after 10s")
 
-Thread-safe Shared Pointer
+Pipeline Manager
+Threaded stages (stage 1 → stage 2 → stage 3)
 
-Future & Promise
 
-Event Registry / Callback
+🔸 4. Concurrency Primitives
+Topics:
 
-Multi-threaded Pipeline Manager
+mutex, shared_mutex, condition_variable
 
-BFT Client Pool
+atomic, memory_order
 
-LeetCode concurrency problems (e.g., Odd-Even, FizzBuzz with 3 Threads)
+future, promise, packaged_task
 
-Thread-safe Rate Limiting Algorithms
+event or callback registry
 
-Spinlock / Busy-Waiting Mutex
 
-Advanced:
+🔸 5. Advanced Synchronization
+Topics:
 
-Lock-free Programming
+Spinlock
 
-Memory Ordering
+Busy-waiting vs blocking
 
-Cache Coherence
+Rate limiting (token bucket, leaky bucket)
 
-ABA Problem
+Thread-safe Singleton pattern
 
-False Sharing
+BFT client pool (Byzantine Fault Tolerant client coordination)
 
-Implementations Without Locks
+
+🔸 6. Lock-Free Programming & Memory Model
+Topics:
+
+Atomic operations (CAS, fetch_add, etc.)
+
+Memory ordering (memory_order_relaxed, acquire, release)
+
+False sharing
+
+ABA problem
+
+Cache coherence
+
+Implementations without locking (using atomics)
+
+
+🔸 7. LeetCode-style Coding Problems
+Problems to Practice:
+
+Print Odd/Even using 2 threads
+
+Print "FizzBuzz" using 3 threads
+
+Zero-Even-Odd problem
+
+H2O problem (ensure water molecule creation rules)
+
+Traffic Light Controller
+
+Bounded Blocking Queue implementation
+
